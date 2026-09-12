@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="en-NZ">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Anatomy of the Singapura Curry Pie — Golden Crust Pie Co.</title>
+<meta name="description" content="A scroll-driven breakdown of our limited-edition Singapore x New Zealand curry pie, plus ingredients and nutrition information.">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;500;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../assets/css/style.css">
+</head>
+<body style="--accent:#b5451b; --accent-dark:#8a3312; --stage-bg:#f2e2c0;">
+
+<div id="error" hidden role="alert">
+  <b>The scroll animation library didn't load.</b>
+  <span id="error-body">GSAP is served from a CDN that an ad blocker, corporate firewall or offline
+  preview tool may be blocking. The sequence is running on a reduced fallback. Allow
+  <code>cdnjs.cloudflare.com</code> and reload for the full version.</span>
+</div>
+
+<header class="site-header">
+  <a class="logo" href="../index.html">Golden Crust <span>Pie Co.</span></a>
+  <nav class="site-nav" aria-label="Primary">
+    <a href="../index.html">Home</a>
+    <a href="../menu.html" aria-current="page">Menu</a>
+    <a class="nav-cta" href="../menu.html">Order a pie</a>
+  </nav>
+</header>
+
+<header class="intro">
+  <div class="eyebrow">Limited edition &middot; Singapore x NZ &middot; $8.90</div>
+  <h1>Anatomy of the Singapura Curry Pie</h1>
+  <p>A one-season collaboration: a Singapore-style chicken curry, baked inside a proper New Zealand
+  pastry shell. Scroll to see how the two traditions sit inside one pie.</p>
+  <div class="scroll-cue">Scroll to begin</div>
+</header>
+
+<section id="sequence">
+  <div id="pin">
+    <div class="stage">
+      <svg viewBox="0 0 400 320" role="img" aria-label="Cross-section illustration of the Singapura curry pie">
+        <defs>
+          <clipPath id="pieClip">
+            <path d="M40,300 C40,300 20,140 90,95 C140,55 260,55 310,95 C380,140 360,300 360,300 Z"/>
+          </clipPath>
+        </defs>
+
+        <g clip-path="url(#pieClip)">
+          <rect class="base" x="0" y="230" width="400" height="90" fill="#c9a06a"/>
+          <rect class="fill-1" x="0" y="185" width="400" height="45" fill="#c97a2e"/>
+          <polygon class="fill-1" points="130,190 160,188 168,206 140,214 118,204" fill="#b5651f"/>
+          <polygon class="fill-1" points="220,196 252,192 260,210 232,218 208,208" fill="#b5651f"/>
+          <polygon class="fill-1" points="280,186 306,190 304,208 280,208" fill="#b5651f"/>
+          <rect class="fill-2" x="0" y="140" width="400" height="45" fill="#d9a02c"/>
+          <rect class="fill-2" x="95" y="150" width="22" height="22" fill="#e8b923"/>
+          <rect class="fill-2" x="150" y="158" width="20" height="20" fill="#d9722c"/>
+          <rect class="fill-2" x="205" y="150" width="22" height="22" fill="#e8b923"/>
+          <rect class="fill-2" x="265" y="156" width="20" height="20" fill="#d9722c"/>
+          <rect class="fill-3" x="0" y="95" width="400" height="45" fill="#d9a02c"/>
+          <ellipse class="fill-3" cx="120" cy="112" rx="7" ry="4" fill="#3f6b2c"/>
+          <ellipse class="fill-3" cx="160" cy="122" rx="7" ry="4" fill="#3f6b2c"/>
+          <circle class="fill-3" cx="210" cy="115" r="4" fill="#b5451b"/>
+          <circle class="fill-3" cx="250" cy="124" r="4" fill="#b5451b"/>
+          <ellipse class="fill-3" cx="290" cy="110" rx="7" ry="4" fill="#3f6b2c"/>
+        </g>
+
+        <path d="M40,300 C40,300 20,140 90,95 C140,55 260,55 310,95 C380,140 360,300 360,300 Z"
+          fill="none" stroke="#8a5015" stroke-width="2" opacity="0.5"/>
+
+        <g class="lid">
+          <path d="M50,150 C48,110 55,80 100,60 C150,38 250,38 300,60 C345,80 352,110 350,150
+            C350,162 300,172 200,172 C100,172 50,162 50,150 Z"
+            fill="#cf8a2e" stroke="#8a5015" stroke-width="2.5"/>
+          <path d="M70,148 C110,158 290,158 330,148" fill="none" stroke="#8a5015" stroke-width="2"
+            stroke-linecap="round" stroke-dasharray="1 10"/>
+          <path d="M170,50 C158,33 164,17 176,4" fill="none" stroke="#e0b25a" stroke-width="3"
+            stroke-linecap="round" opacity="0.6"/>
+          <path d="M225,48 C216,30 223,15 236,3" fill="none" stroke="#e0b25a" stroke-width="3"
+            stroke-linecap="round" opacity="0.45"/>
+        </g>
+      </svg>
+    </div>
+
+    <div class="overlays" id="overlays"></div>
+
+    <div id="progress-rail"><div id="progress-fill"></div></div>
+  </div>
+</section>
+
+<section class="ingredients">
+  <h2>What's in it</h2>
+  <ul class="ingredient-list">
+    <li><span class="dot"></span><div><strong>Shortcrust base</strong><span>The standard Golden Crust base — this pie still has to eat like a pie.</span></div></li>
+    <li><span class="dot"></span><div><strong>Curry chicken</strong><span>Thigh chicken simmered in a turmeric-spiced curry built the Singapore way, not a British-style korma.</span></div></li>
+    <li><span class="dot"></span><div><strong>Potato &amp; carrot</strong><span>Diced and simmered into the curry until tender, the way you'd find it in a Singapore chicken curry.</span></div></li>
+    <li><span class="dot"></span><div><strong>Curry leaf &amp; fresh chilli</strong><span>Stirred through at the end for aromatics and a real kick of heat.</span></div></li>
+    <li><span class="dot"></span><div><strong>Puff pastry lid</strong><span>Brushed with a curry-tinted egg wash — same lamination, warmer colour.</span></div></li>
+  </ul>
+</section>
+
+<section class="nutrition">
+  <h2>Nutrition information</h2>
+  <p class="note">Estimated values for a single pie (approx. 205 g), provided for illustrative purposes
+  on this demo site — not laboratory-tested.</p>
+  <table class="nutrition-table">
+    <thead>
+      <tr><th>Nutrient</th><th>Per pie (205 g)</th><th>Per 100 g</th></tr>
+    </thead>
+    <tbody>
+      <tr class="total"><td>Energy</td><td>2210 kJ / 528 kcal</td><td>1078 kJ / 258 kcal</td></tr>
+      <tr><td>Protein</td><td>19.6 g</td><td>9.6 g</td></tr>
+      <tr><td>Fat, total</td><td>27.5 g</td><td>13.4 g</td></tr>
+      <tr><td class="indent">— saturated</td><td>12.8 g</td><td>6.2 g</td></tr>
+      <tr><td>Carbohydrate</td><td>48.3 g</td><td>23.6 g</td></tr>
+      <tr><td class="indent">— sugars</td><td>7.2 g</td><td>3.5 g</td></tr>
+      <tr><td>Sodium</td><td>760 mg</td><td>371 mg</td></tr>
+    </tbody>
+  </table>
+</section>
+
+<section class="up-next">
+  <h2>More from the menu</h2>
+  <div class="pie-grid" style="padding:0;">
+    <a class="pie-card" href="mince-and-cheese.html" style="--card-bg:#ece0c8; --card-accent:#a86c26;">
+      <div class="thumb"><svg viewBox="0 0 120 120"><circle cx="60" cy="60" r="52" fill="#e8b923"/><circle cx="60" cy="60" r="38" fill="#7a3b28"/></svg></div>
+      <h3>Mince &amp; Cheese</h3>
+      <p class="desc">The everyday classic.</p>
+    </a>
+    <a class="pie-card" href="steak-and-cheese.html" style="--card-bg:#e8d9c8; --card-accent:#7a2f1f;">
+      <div class="thumb"><svg viewBox="0 0 120 120"><circle cx="60" cy="60" r="52" fill="#e8b923"/><circle cx="60" cy="60" r="38" fill="#6b2b1f"/></svg></div>
+      <h3>Steak &amp; Cheese</h3>
+      <p class="desc">Chunky steak, thick gravy.</p>
+    </a>
+    <a class="pie-card" href="vege.html" style="--card-bg:#e2e8c8; --card-accent:#4c7a30;">
+      <div class="thumb"><svg viewBox="0 0 120 120"><circle cx="60" cy="60" r="52" fill="#ecdc9a"/><circle cx="60" cy="60" r="38" fill="#d97a3c"/></svg></div>
+      <h3>Vege</h3>
+      <p class="desc">Roast pumpkin, kumara &amp; mixed veg.</p>
+    </a>
+  </div>
+</section>
+
+<footer class="site-footer">
+  <div class="foot-top">
+    <div>
+      <a class="logo" href="../index.html">Golden Crust <span>Pie Co.</span></a>
+    </div>
+    <div>
+      <h3>Menu</h3>
+      <div class="footer-links">
+        <a href="mince-and-cheese.html">Mince &amp; Cheese</a>
+        <a href="steak-and-cheese.html">Steak &amp; Cheese</a>
+        <a href="vege.html">Vege</a>
+        <a href="singapore-nz.html">Singapura Curry Pie</a>
+      </div>
+    </div>
+    <div>
+      <h3>Site</h3>
+      <div class="footer-links">
+        <a href="../index.html">Home</a>
+        <a href="../menu.html">Full menu</a>
+      </div>
+    </div>
+  </div>
+  <p class="fine-print">All pricing and nutrition information on this site is illustrative sample data
+  for a portfolio/learning project, not a real product for sale.</p>
+</footer>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+<script src="../assets/js/anatomy.js"></script>
+<script>
+  window.initPieAnatomy({
+    layers: [
+      { selector: ".lid",    kind: "lift",  from: 0.12, to: 0.26 },
+      { selector: ".fill-1", kind: "pulse", from: 0.30, to: 0.44 },
+      { selector: ".fill-2", kind: "pulse", from: 0.48, to: 0.62 },
+      { selector: ".fill-3", kind: "pulse", from: 0.66, to: 0.80 },
+      { selector: ".base",   kind: "pulse", from: 0.84, to: 0.98 }
+    ],
+    overlays: [
+      { from: 0.02, to: 0.12, tag: "Whole pie · Limited edition",
+        title: "A one-season collaboration",
+        body: "Same glaze, same size as the rest of the range — but this one only runs while the season lasts." },
+      { from: 0.14, to: 0.26, tag: "01 — Lid",
+        title: "Curry-tinted puff pastry",
+        body: "The usual lamination, brushed with an egg wash tinted by the curry underneath it." },
+      { from: 0.30, to: 0.44, tag: "02 — Filling",
+        title: "Singapore-style curry chicken",
+        body: "Thigh chicken simmered in a turmeric-spiced curry — built the Singapore way, not a British korma." },
+      { from: 0.48, to: 0.62, tag: "03 — Filling",
+        title: "Potato & carrot",
+        body: "Diced and simmered into the curry until tender, soaking up the sauce around the chicken." },
+      { from: 0.66, to: 0.80, tag: "04 — Filling",
+        title: "Curry leaf & fresh chilli",
+        body: "Stirred through right at the end, so the aromatics and the heat both survive the bake." },
+      { from: 0.84, to: 1.0, holdToEnd: true, tag: "05 — Base",
+        title: "Shortcrust base",
+        body: "The one thing that stays purely New Zealand — this is still, structurally, a pie." }
+    ]
+  });
+</script>
+</body>
+</html>

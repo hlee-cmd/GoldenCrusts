@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="en-NZ">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Anatomy of a Steak &amp; Cheese Pie — Golden Crust Pie Co.</title>
+<meta name="description" content="A scroll-driven breakdown of what's inside a New Zealand Steak &amp; Cheese pie, plus ingredients and nutrition information.">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;500;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../assets/css/style.css">
+</head>
+<body style="--accent:#7a2f1f; --accent-dark:#5c2115; --stage-bg:#ece0d6;">
+
+<div id="error" hidden role="alert">
+  <b>The scroll animation library didn't load.</b>
+  <span id="error-body">GSAP is served from a CDN that an ad blocker, corporate firewall or offline
+  preview tool may be blocking. The sequence is running on a reduced fallback. Allow
+  <code>cdnjs.cloudflare.com</code> and reload for the full version.</span>
+</div>
+
+<header class="site-header">
+  <a class="logo" href="../index.html">Golden Crust <span>Pie Co.</span></a>
+  <nav class="site-nav" aria-label="Primary">
+    <a href="../index.html">Home</a>
+    <a href="../menu.html" aria-current="page">Menu</a>
+    <a class="nav-cta" href="../menu.html">Order a pie</a>
+  </nav>
+</header>
+
+<header class="intro">
+  <div class="eyebrow">Classic &middot; $7.50</div>
+  <h1>Anatomy of a Steak &amp; Cheese pie</h1>
+  <p>Bigger chunks, thicker gravy. Scroll to see why this one costs a dollar more than its mince cousin.</p>
+  <div class="scroll-cue">Scroll to begin</div>
+</header>
+
+<section id="sequence">
+  <div id="pin">
+    <div class="stage">
+      <svg viewBox="0 0 400 320" role="img" aria-label="Cross-section illustration of a steak and cheese pie">
+        <defs>
+          <clipPath id="pieClip">
+            <path d="M40,300 C40,300 20,140 90,95 C140,55 260,55 310,95 C380,140 360,300 360,300 Z"/>
+          </clipPath>
+        </defs>
+
+        <g clip-path="url(#pieClip)">
+          <rect class="base" x="0" y="230" width="400" height="90" fill="#c9a06a"/>
+          <rect class="fill-1" x="0" y="175" width="400" height="60" fill="#8a4a2a" opacity="0.9"/>
+          <polygon class="fill-1" points="120,180 150,178 158,198 132,206 112,196" fill="#6b2b1f"/>
+          <polygon class="fill-1" points="210,190 245,186 254,206 224,216 202,206" fill="#6b2b1f"/>
+          <polygon class="fill-1" points="280,178 310,182 308,202 282,204" fill="#6b2b1f"/>
+          <rect class="fill-2" x="0" y="130" width="400" height="50" fill="#e8b923"/>
+        </g>
+
+        <path d="M40,300 C40,300 20,140 90,95 C140,55 260,55 310,95 C380,140 360,300 360,300 Z"
+          fill="none" stroke="#8a5a22" stroke-width="2" opacity="0.5"/>
+
+        <g class="lid">
+          <path d="M50,150 C48,110 55,80 100,60 C150,38 250,38 300,60 C345,80 352,110 350,150
+            C350,162 300,172 200,172 C100,172 50,162 50,150 Z"
+            fill="#c98a3c" stroke="#8a5a22" stroke-width="2.5"/>
+          <path d="M70,148 C110,158 290,158 330,148" fill="none" stroke="#8a5a22" stroke-width="2"
+            stroke-linecap="round" stroke-dasharray="1 10"/>
+          <path d="M170,50 C160,35 165,20 175,8" fill="none" stroke="#c9a06a" stroke-width="3"
+            stroke-linecap="round" opacity="0.55"/>
+          <path d="M225,48 C218,32 224,18 235,6" fill="none" stroke="#c9a06a" stroke-width="3"
+            stroke-linecap="round" opacity="0.4"/>
+        </g>
+      </svg>
+    </div>
+
+    <div class="overlays" id="overlays"></div>
+
+    <div id="progress-rail"><div id="progress-fill"></div></div>
+  </div>
+</section>
+
+<section class="ingredients">
+  <h2>What's in it</h2>
+  <ul class="ingredient-list">
+    <li><span class="dot"></span><div><strong>Shortcrust base</strong><span>The same sturdy dough as the mince pie — it has to hold a heavier filling.</span></div></li>
+    <li><span class="dot"></span><div><strong>Diced chuck steak</strong><span>Braised low and slow until fork-tender, kept chunky rather than shredded.</span></div></li>
+    <li><span class="dot"></span><div><strong>Rich beef gravy</strong><span>Built straight from the braising liquid — deeper and thicker than the mince pie's gravy.</span></div></li>
+    <li><span class="dot"></span><div><strong>Tasty cheese</strong><span>A generous layer melted over the steak before the lid goes on.</span></div></li>
+    <li><span class="dot"></span><div><strong>Puff pastry lid</strong><span>Laminated butter pastry, egg-washed and baked until it shatters.</span></div></li>
+  </ul>
+</section>
+
+<section class="nutrition">
+  <h2>Nutrition information</h2>
+  <p class="note">Estimated values for a single pie (approx. 210 g), provided for illustrative purposes
+  on this demo site — not laboratory-tested.</p>
+  <table class="nutrition-table">
+    <thead>
+      <tr><th>Nutrient</th><th>Per pie (210 g)</th><th>Per 100 g</th></tr>
+    </thead>
+    <tbody>
+      <tr class="total"><td>Energy</td><td>2480 kJ / 593 kcal</td><td>1181 kJ / 282 kcal</td></tr>
+      <tr><td>Protein</td><td>22.4 g</td><td>10.7 g</td></tr>
+      <tr><td>Fat, total</td><td>35.9 g</td><td>17.1 g</td></tr>
+      <tr><td class="indent">— saturated</td><td>17.2 g</td><td>8.2 g</td></tr>
+      <tr><td>Carbohydrate</td><td>43.8 g</td><td>20.9 g</td></tr>
+      <tr><td class="indent">— sugars</td><td>3.4 g</td><td>1.6 g</td></tr>
+      <tr><td>Sodium</td><td>820 mg</td><td>390 mg</td></tr>
+    </tbody>
+  </table>
+</section>
+
+<section class="up-next">
+  <h2>More from the menu</h2>
+  <div class="pie-grid" style="padding:0;">
+    <a class="pie-card" href="mince-and-cheese.html" style="--card-bg:#ece0c8; --card-accent:#a86c26;">
+      <div class="thumb"><svg viewBox="0 0 120 120"><circle cx="60" cy="60" r="52" fill="#e8b923"/><circle cx="60" cy="60" r="38" fill="#7a3b28"/></svg></div>
+      <h3>Mince &amp; Cheese</h3>
+      <p class="desc">The everyday classic.</p>
+    </a>
+    <a class="pie-card" href="vege.html" style="--card-bg:#e2e8c8; --card-accent:#4c7a30;">
+      <div class="thumb"><svg viewBox="0 0 120 120"><circle cx="60" cy="60" r="52" fill="#ecdc9a"/><circle cx="60" cy="60" r="38" fill="#d97a3c"/></svg></div>
+      <h3>Vege</h3>
+      <p class="desc">Roast pumpkin, kumara &amp; mixed veg.</p>
+    </a>
+    <a class="pie-card" href="singapore-nz.html" style="--card-bg:#f0d9a8; --card-accent:#b5451b;">
+      <span class="badge">Limited</span>
+      <div class="thumb"><svg viewBox="0 0 120 120"><circle cx="60" cy="60" r="52" fill="#d9a02c"/><circle cx="60" cy="60" r="38" fill="#c97a2e"/></svg></div>
+      <h3>Singapura Curry Pie</h3>
+      <p class="desc">Our Singapore x NZ collaboration.</p>
+    </a>
+  </div>
+</section>
+
+<footer class="site-footer">
+  <div class="foot-top">
+    <div>
+      <a class="logo" href="../index.html">Golden Crust <span>Pie Co.</span></a>
+    </div>
+    <div>
+      <h3>Menu</h3>
+      <div class="footer-links">
+        <a href="mince-and-cheese.html">Mince &amp; Cheese</a>
+        <a href="steak-and-cheese.html">Steak &amp; Cheese</a>
+        <a href="vege.html">Vege</a>
+        <a href="singapore-nz.html">Singapura Curry Pie</a>
+      </div>
+    </div>
+    <div>
+      <h3>Site</h3>
+      <div class="footer-links">
+        <a href="../index.html">Home</a>
+        <a href="../menu.html">Full menu</a>
+      </div>
+    </div>
+  </div>
+  <p class="fine-print">All pricing and nutrition information on this site is illustrative sample data
+  for a portfolio/learning project, not a real product for sale.</p>
+</footer>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+<script src="../assets/js/anatomy.js"></script>
+<script>
+  window.initPieAnatomy({
+    layers: [
+      { selector: ".lid",    kind: "lift",  from: 0.14, to: 0.30 },
+      { selector: ".fill-1", kind: "pulse", from: 0.32, to: 0.48 },
+      { selector: ".fill-2", kind: "pulse", from: 0.52, to: 0.68 },
+      { selector: ".base",   kind: "pulse", from: 0.80, to: 0.96 }
+    ],
+    overlays: [
+      { from: 0.02, to: 0.14, tag: "Whole pie",
+        title: "Straight from the warmer",
+        body: "Heavier than the mince pie in your hand before you've even bitten in — that's the steak." },
+      { from: 0.16, to: 0.30, tag: "01 — Lid",
+        title: "Laminated puff pastry",
+        body: "Same lid as the rest of the range, egg-washed and baked to shatter on the first bite." },
+      { from: 0.32, to: 0.48, tag: "02 — Filling",
+        title: "Chuck steak & thick gravy",
+        body: "Diced chuck braised until fork-tender, sitting in a gravy built straight from the braising liquid — the whole reason this pie costs a dollar more." },
+      { from: 0.52, to: 0.68, tag: "03 — Filling",
+        title: "Tasty cheese",
+        body: "A generous layer melted over the steak before the lid seals it in." },
+      { from: 0.80, to: 1.0, holdToEnd: true, tag: "04 — Base",
+        title: "Shortcrust base",
+        body: "Sturdy enough to carry the weight of a heavier filling without ever going soggy." }
+    ]
+  });
+</script>
+</body>
+</html>
