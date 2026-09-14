@@ -11,6 +11,7 @@ paired with text that fades in as you scroll.
 
 - `index.html` — home page
 - `menu.html` — full menu, links to every pie's anatomy page
+- `pies/chicken.html` — classic chicken, mushroom & mixed veg — real 240-frame photo sequence
 - `pies/mince-and-cheese.html` — classic beef mince & cheese
 - `pies/steak-and-cheese.html` — diced steak, thick gravy, cheese
 - `pies/vege.html` — roast pumpkin, kumara & mixed veg, vegetarian
@@ -24,13 +25,18 @@ product.
 
 - Plain HTML/CSS/JS, no build step — open any `.html` file directly, or serve the folder with any
   static file server.
-- Scroll animation is driven by [GSAP](https://gsap.com/) + ScrollTrigger (loaded from cdnjs). Each
-  pie page pins its cross-section illustration and scrubs a timeline as you scroll, revealing the
-  lid, each filling layer, and the base — see `assets/js/anatomy.js` for the reusable engine and the
-  inline `<script>` at the bottom of each `pies/*.html` file for that pie's layer timings and copy.
-- If the animation library fails to load (e.g. blocked by an ad blocker), the page falls back to a
-  simplified scroll-linked reveal so the content still works.
-- Pie cross-sections are hand-built inline SVG (no photography), so the whole site is self-contained.
+- Scroll animation is driven by [GSAP](https://gsap.com/) + ScrollTrigger (loaded from cdnjs) on
+  every pie page, via one of two reusable engines:
+  - `assets/js/anatomy.js` — drives the four illustrated pies (Mince & Cheese, Steak & Cheese, Vege,
+    Singapura Curry Pie). No photography for these; the cross-section is hand-built inline SVG, and
+    the lid lifts/fades while each filling layer highlights in turn.
+  - `assets/js/frame-sequence.js` — drives the Chicken pie, which instead scrubs through a real
+    240-image photographed sequence (`assets/frames/chicken-pie/`) on a pinned `<canvas>`, the same
+    technique the original "Anatomy of a NZ chicken pie" scroll demo used.
+  - Both engines take a per-pie config (frame/layer timings + overlay copy) from the inline
+    `<script>` at the bottom of each `pies/*.html` file.
+- If the animation library fails to load (e.g. blocked by an ad blocker), every pie page falls back
+  to a simplified scroll-linked reveal so the content still works.
 
 ## Deploying
 

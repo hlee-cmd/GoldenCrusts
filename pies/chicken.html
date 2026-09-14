@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="en-NZ">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Anatomy of a Chicken Pie — Golden Crust Pie Co.</title>
+<meta name="description" content="A scroll-driven, frame-by-frame photo breakdown of the six layers inside our New Zealand chicken pie, plus ingredients and nutrition information.">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;500;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../assets/css/style.css">
+
+<!-- Get the first frame in flight before the script even parses. -->
+<link rel="preload" as="image" href="../assets/frames/chicken-pie/ezgif-frame-001.jpg">
+</head>
+<body style="--accent:#d4941f; --accent-dark:#9c6a12; --stage-bg:#b4b4b1;">
+
+<div id="error" hidden role="alert">
+  <b>The scroll animation library didn't load.</b>
+  <span id="error-body">GSAP is served from a CDN that an ad blocker, corporate firewall or offline
+  preview tool may be blocking. The sequence is running on a reduced fallback. Allow
+  <code>cdnjs.cloudflare.com</code> and reload for the full version.</span>
+</div>
+
+<div id="loader">
+  <h2>Loading the sequence</h2>
+  <div id="load-rail"><div id="load-fill"></div></div>
+  <div id="load-count">0 of 240 frames</div>
+</div>
+
+<header class="site-header">
+  <a class="logo" href="../index.html">Golden Crust <span>Pie Co.</span></a>
+  <nav class="site-nav" aria-label="Primary">
+    <a href="../index.html">Home</a>
+    <a href="../menu.html" aria-current="page">Menu</a>
+    <a class="nav-cta" href="../menu.html">Order a pie</a>
+  </nav>
+</header>
+
+<header class="intro">
+  <div class="eyebrow">Classic &middot; $6.90</div>
+  <h1>Anatomy of a Chicken pie</h1>
+  <p>Six layers, one hand, no cutlery. Photographed frame by frame — scroll to pull it apart and put
+  it back together.</p>
+  <div class="scroll-cue">Scroll to begin</div>
+</header>
+
+<section id="sequence">
+  <div id="pin">
+    <canvas id="frames"></canvas>
+
+    <div class="overlays" id="overlays"></div>
+
+    <div id="progress-rail"><div id="progress-fill"></div></div>
+  </div>
+</section>
+
+<section class="ingredients">
+  <h2>What's in it</h2>
+  <ul class="ingredient-list">
+    <li><span class="dot"></span><div><strong>Shortcrust base</strong><span>Sturdier than the lid, because it does the structural work — the whole pie eats standing up.</span></div></li>
+    <li><span class="dot"></span><div><strong>Sautéed mushrooms</strong><span>Sliced and cooked down first, sitting at the bottom under a pale, creamy gravy.</span></div></li>
+    <li><span class="dot"></span><div><strong>Peas, carrot &amp; sweetcorn</strong><span>Diced fine. The sweetcorn is the giveaway — it's what marks this out from a British chicken pie.</span></div></li>
+    <li><span class="dot"></span><div><strong>Chicken, in chunks</strong><span>Torn pieces of thigh and breast, never mince — loose enough to soak up gravy, big enough to bite into.</span></div></li>
+    <li><span class="dot"></span><div><strong>Creamy chicken gravy</strong><span>Binds the mushrooms, veg and chicken into one filling instead of three separate ones.</span></div></li>
+    <li><span class="dot"></span><div><strong>Puff pastry lid</strong><span>Laminated, egg-washed and baked until it shatters on the first bite.</span></div></li>
+  </ul>
+</section>
+
+<section class="nutrition">
+  <h2>Nutrition information</h2>
+  <p class="note">Estimated values for a single pie (approx. 200 g), provided for illustrative purposes
+  on this demo site — not laboratory-tested.</p>
+  <table class="nutrition-table">
+    <thead>
+      <tr><th>Nutrient</th><th>Per pie (200 g)</th><th>Per 100 g</th></tr>
+    </thead>
+    <tbody>
+      <tr class="total"><td>Energy</td><td>2150 kJ / 514 kcal</td><td>1075 kJ / 257 kcal</td></tr>
+      <tr><td>Protein</td><td>19.4 g</td><td>9.7 g</td></tr>
+      <tr><td>Fat, total</td><td>29.8 g</td><td>14.9 g</td></tr>
+      <tr><td class="indent">— saturated</td><td>13.6 g</td><td>6.8 g</td></tr>
+      <tr><td>Carbohydrate</td><td>43.6 g</td><td>21.8 g</td></tr>
+      <tr><td class="indent">— sugars</td><td>3.8 g</td><td>1.9 g</td></tr>
+      <tr><td>Sodium</td><td>710 mg</td><td>355 mg</td></tr>
+    </tbody>
+  </table>
+</section>
+
+<section class="up-next">
+  <h2>More from the menu</h2>
+  <div class="pie-grid" style="padding:0;">
+    <a class="pie-card" href="mince-and-cheese.html" style="--card-bg:#ece0c8; --card-accent:#a86c26;">
+      <div class="thumb"><svg viewBox="0 0 120 120"><circle cx="60" cy="60" r="52" fill="#e8b923"/><circle cx="60" cy="60" r="38" fill="#7a3b28"/></svg></div>
+      <h3>Mince &amp; Cheese</h3>
+      <p class="desc">The everyday classic.</p>
+    </a>
+    <a class="pie-card" href="steak-and-cheese.html" style="--card-bg:#e8d9c8; --card-accent:#7a2f1f;">
+      <div class="thumb"><svg viewBox="0 0 120 120"><circle cx="60" cy="60" r="52" fill="#e8b923"/><circle cx="60" cy="60" r="38" fill="#6b2b1f"/></svg></div>
+      <h3>Steak &amp; Cheese</h3>
+      <p class="desc">Chunky steak, thick gravy.</p>
+    </a>
+    <a class="pie-card" href="vege.html" style="--card-bg:#e2e8c8; --card-accent:#4c7a30;">
+      <div class="thumb"><svg viewBox="0 0 120 120"><circle cx="60" cy="60" r="52" fill="#ecdc9a"/><circle cx="60" cy="60" r="38" fill="#d97a3c"/></svg></div>
+      <h3>Vege</h3>
+      <p class="desc">Roast pumpkin, kumara &amp; mixed veg.</p>
+    </a>
+    <a class="pie-card" href="singapore-nz.html" style="--card-bg:#f0d9a8; --card-accent:#b5451b;">
+      <span class="badge">Limited</span>
+      <div class="thumb"><svg viewBox="0 0 120 120"><circle cx="60" cy="60" r="52" fill="#d9a02c"/><circle cx="60" cy="60" r="38" fill="#c97a2e"/></svg></div>
+      <h3>Singapura Curry Pie</h3>
+      <p class="desc">Our Singapore x NZ collaboration.</p>
+    </a>
+  </div>
+</section>
+
+<footer class="site-footer">
+  <div class="foot-top">
+    <div>
+      <a class="logo" href="../index.html">Golden Crust <span>Pie Co.</span></a>
+    </div>
+    <div>
+      <h3>Menu</h3>
+      <div class="footer-links">
+        <a href="chicken.html">Chicken</a>
+        <a href="mince-and-cheese.html">Mince &amp; Cheese</a>
+        <a href="steak-and-cheese.html">Steak &amp; Cheese</a>
+        <a href="vege.html">Vege</a>
+        <a href="singapore-nz.html">Singapura Curry Pie</a>
+      </div>
+    </div>
+    <div>
+      <h3>Site</h3>
+      <div class="footer-links">
+        <a href="../index.html">Home</a>
+        <a href="../menu.html">Full menu</a>
+      </div>
+    </div>
+  </div>
+  <p class="fine-print">All pricing and nutrition information on this site is illustrative sample data
+  for a portfolio/learning project, not a real product for sale.</p>
+</footer>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+<script src="../assets/js/frame-sequence.js"></script>
+<script>
+  window.initFrameSequence({
+    frameCount: 240,
+    framePath: function (i) {
+      return "../assets/frames/chicken-pie/ezgif-frame-" + String(i + 1).padStart(3, "0") + ".jpg";
+    },
+    background: "#b4b4b1",
+    // Frames 1-58 of this source carry a 4px black letterbox bar top and
+    // bottom; frames 59-240 do not. Cropping 5px off every frame at draw
+    // time keeps the framing identical throughout.
+    sourceCrop: { top: 5, right: 0, bottom: 5, left: 0 },
+    fitMode: "cover",
+    scrub: 0.65,
+    maxDPR: 2.5,
+    useGsapPin: true,
+    loaderConcurrency: 10,
+    overlays: [
+      { from: 0.02, to: 0.15, tag: "Whole pie",
+        title: "Straight from the warmer",
+        body: "Whole, glazed and still steaming. The pie that lives in every dairy, bakery and service station in the country." },
+      { from: 0.18, to: 0.32, tag: "01 — Lid",
+        title: "The lid comes off",
+        body: "That burnished puff pastry top is the tell — laminated, egg-washed, and built to shatter the moment you bite it." },
+      { from: 0.36, to: 0.50, tag: "02 — Filling",
+        title: "Chicken, in chunks",
+        body: "Torn pieces of thigh and breast, never mince. Loose enough to soak up gravy, big enough to actually bite into." },
+      { from: 0.54, to: 0.67, tag: "03 — Filling",
+        title: "Peas, carrot, sweetcorn",
+        body: "The mixed-veg seam, diced fine. The sweetcorn is the giveaway — it's what marks this out from a British chicken pie." },
+      { from: 0.71, to: 0.84, tag: "04 — Filling",
+        title: "Mushrooms under gravy",
+        body: "Sautéed sliced mushrooms sit at the bottom, a pale creamy gravy pools across the top. Chicken and mushroom has its own category at the Bakels Supreme Pie Awards." },
+      { from: 0.88, to: 1.0, holdToEnd: true, tag: "05 — Base",
+        title: "And a shortcrust base",
+        body: "Sturdier than the lid, because it does the structural work. Assembled, the whole thing fits in a paper bag and eats standing up." }
+    ]
+  });
+</script>
+</body>
+</html>
