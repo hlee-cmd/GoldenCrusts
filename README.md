@@ -13,13 +13,17 @@ paired with text that fades in as you scroll.
 - `menu.html` — full menu, links to every pie's anatomy page
 - `pies/chicken.html` — classic chicken, mushroom & mixed veg — real 240-frame photo sequence
 - `pies/mince-and-cheese.html` — classic beef mince & cheese
+- `pies/mince-and-triple-cheese.html` — loaded mince pie with a grilled cheddar/mozzarella/parmesan
+  cap — real 240-frame photo sequence
 - `pies/steak-and-cheese.html` — diced steak, thick gravy, cheese
 - `pies/vege.html` — roast pumpkin, kumara & mixed veg, vegetarian
 - `pies/singapore-nz.html` — Singapura Curry Pie, a Singapore x NZ limited edition
+- `pies/cutie-pie.html` — mini mandarin & vanilla custard dessert pie, a concept placeholder page
+  (no scroll sequence yet — no photography exists for it)
 
-Each pie page ends with an ingredients list and a nutrition information panel (per pie / per 100 g).
-All pricing and nutrition figures are illustrative sample data for this demo project, not a real
-product.
+Each finished pie page ends with an ingredients list and a nutrition information panel (per pie /
+per 100 g). All pricing and nutrition figures are illustrative sample data for this demo project,
+not a real product.
 
 ## How it works
 
@@ -30,9 +34,12 @@ product.
   - `assets/js/anatomy.js` — drives the four illustrated pies (Mince & Cheese, Steak & Cheese, Vege,
     Singapura Curry Pie). No photography for these; the cross-section is hand-built inline SVG, and
     the lid lifts/fades while each filling layer highlights in turn.
-  - `assets/js/frame-sequence.js` — drives the Chicken pie, which instead scrubs through a real
-    240-image photographed sequence (`assets/frames/chicken-pie/`) on a pinned `<canvas>`, the same
-    technique the original "Anatomy of a NZ chicken pie" scroll demo used.
+  - `assets/js/frame-sequence.js` — drives the Chicken and Mince & Triple Cheese pies, which instead
+    scrub through a real 240-image photographed sequence (`assets/frames/chicken-pie/` and
+    `assets/frames/mince-triple-cheese/`) on a pinned `<canvas>`, the same technique the original
+    "Anatomy of a NZ chicken pie" scroll demo used.
+  - Cutie Pie has no engine yet — it's a static "coming soon" page with no photography or frame
+    sequence behind it.
   - Both engines take a per-pie config (frame/layer timings + overlay copy) from the inline
     `<script>` at the bottom of each `pies/*.html` file.
 - If the animation library fails to load (e.g. blocked by an ad blocker), every pie page falls back
