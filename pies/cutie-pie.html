@@ -8,7 +8,10 @@
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;500;700&display=swap" rel="stylesheet">
+<!-- Non-blocking font load — see README "Frame loading performance". -->
+<link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;500;700&display=swap">
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;500;700&display=swap" rel="stylesheet" media="print" onload="this.media='all'">
+<noscript><link href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;500;700&display=swap" rel="stylesheet"></noscript>
 <link rel="stylesheet" href="../assets/css/style.css">
 </head>
 <body style="--accent:#d9668a; --accent-dark:#a83f60;">
@@ -72,11 +75,6 @@
 <section class="up-next">
   <h2>Available right now</h2>
   <div class="pie-grid" style="padding:0;">
-    <a class="pie-card" href="mince-and-cheese.html" style="--card-bg:#ece0c8; --card-accent:#a86c26;">
-      <div class="thumb"><svg viewBox="0 0 120 120"><circle cx="60" cy="60" r="52" fill="#e8b923"/><circle cx="60" cy="60" r="38" fill="#7a3b28"/></svg></div>
-      <h3>Mince &amp; Cheese</h3>
-      <p class="desc">The everyday classic.</p>
-    </a>
     <a class="pie-card" href="mince-and-triple-cheese.html" style="--card-bg:#ecd9c0; --card-accent:#c0651f;">
       <div class="thumb"><svg viewBox="0 0 120 120"><circle cx="60" cy="60" r="52" fill="#e8b923"/><circle cx="60" cy="60" r="38" fill="#7a3b28"/><circle cx="60" cy="60" r="22" fill="#f0d18a"/></svg></div>
       <h3>Mince &amp; Triple Cheese</h3>
@@ -99,7 +97,6 @@
       <h3>Menu</h3>
       <div class="footer-links">
         <a href="chicken.html">Chicken</a>
-        <a href="mince-and-cheese.html">Mince &amp; Cheese</a>
         <a href="mince-and-triple-cheese.html">Mince &amp; Triple Cheese</a>
         <a href="steak-and-cheese.html">Steak &amp; Cheese</a>
         <a href="vege.html">Vege</a>

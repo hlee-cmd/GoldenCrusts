@@ -396,6 +396,28 @@ img, svg { max-width: 100%; display: block; }
   font-weight: 500;
 }
 
+/* A small "for reference" inset — e.g. a pie no longer sold on its own,
+   shown small inside the card that replaced it. */
+.pie-card .insight {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+  margin-top: -0.25rem;
+}
+
+.pie-card .insight svg {
+  width: 2.25rem;
+  height: 2.25rem;
+  flex-shrink: 0;
+  border-radius: 50%;
+}
+
+.pie-card .insight span {
+  font-size: 0.78rem;
+  line-height: 1.35;
+  color: var(--ink-soft);
+}
+
 .badge {
   position: absolute;
   top: 1rem;

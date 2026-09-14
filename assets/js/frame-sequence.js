@@ -7,6 +7,14 @@
    scroll position via GSAP ScrollTrigger. Falls back to a plain
    scroll-linked reveal if the CDN script is blocked.
 
+   Loading strategy: the page becomes interactive as soon as the poster
+   frame (index 0) decodes — it does not wait for all 240 images. The
+   rest load in the background in a spread-out (bit-reversal) order
+   rather than strictly 0,1,2,3…, so that at any point during the
+   background load, whatever frame the visitor has scrolled to has a
+   nearby loaded neighbour instead of only the ones loaded so far at
+   one end of the sequence.
+
    Usage: call window.initFrameSequence(CONFIG) — see pies/chicken.html.
    ========================================================================= */
 
@@ -131,53 +139,84 @@
 
     /* ---------- Preload ---------- */
 
+    // Bit-reversal permutation of 0..n-1: front-loads a sparse, evenly
+    // spread set of indices (0, half, quarter, three-quarter, …) instead
+    // of the sequence in order. A handful of these loading is enough for
+    // nearestDrawable() to have a close neighbour anywhere in the range,
+    // long before the full set has downloaded.
+    function spreadOrder(n) {
+      var bits = Math.max(1, Math.ceil(Math.log2(n)));
+      var span = 1 << bits;
+      var order = [];
+      for (var i = 0; i < span; i++) {
+        var r = 0, x = i;
+        for (var b = 0; b < bits; b++) { r = (r << 1) | (x & 1); x >>= 1; }
+        if (r < n) order.push(r);
+      }
+      return order;
+    }
+
+    // How many frames (spread across the sequence) to wait for before
+    // treating the sequence as "ready" and dismissing the loader — a
+    // handful is enough for nearestDrawable() to always be close, without
+    // making the visitor wait anywhere near the full 240-image download.
+    var REVEAL_AFTER = Math.min(CONFIG.frameCount, 12);
+
     function updateLoaderUI() {
       var pct = settled / CONFIG.frameCount;
       loadFill.style.width = (pct * 100).toFixed(1) + "%";
       loadCount.textContent = settled + " of " + CONFIG.frameCount + " frames";
 
-      if (settled >= CONFIG.frameCount) {
-        if (failedCount > 0) {
-          loadCount.textContent =
-            (CONFIG.frameCount - failedCount) + " of " + CONFIG.frameCount +
-            " frames loaded — " + failedCount + " missing, holding on the nearest frame";
-        }
-        loaderEl.classList.add("done");
-        window.setTimeout(function () { loaderEl.style.display = "none"; }, 600);
+      if (failedCount > 0 && settled >= CONFIG.frameCount) {
+        loadCount.textContent =
+          (CONFIG.frameCount - failedCount) + " of " + CONFIG.frameCount +
+          " frames loaded — " + failedCount + " missing, holding on the nearest frame";
       }
     }
 
-    function preload(onFirstFrame) {
+    function preload(onReady) {
+      var order = spreadOrder(CONFIG.frameCount);
       var next = 0;
-      var firstFired = false;
+      var revealed = false;
+
+      function maybeReveal() {
+        if (revealed) return;
+        if (isDrawable(images[0]) || settled >= REVEAL_AFTER) {
+          revealed = true;
+          loaderEl.classList.add("done");
+          window.setTimeout(function () { loaderEl.style.display = "none"; }, 500);
+          onReady();
+        }
+      }
 
       function settle(i, ok) {
         settled++;
         if (!ok) failedCount++;
 
-        if (i === 0 && ok && !firstFired) {
-          firstFired = true;
-          onFirstFrame();
-        }
         if (ok && (lastDrawn === -1 || i === lastDrawn)) { lastDrawn = -1; draw(); }
 
         updateLoaderUI();
+        maybeReveal();
         pump();
       }
 
       function pump() {
-        if (next >= CONFIG.frameCount) return;
-        var i = next++;
+        if (next >= order.length) return;
+        var i = order[next++];
         var img = new Image();
         img.decoding = "async";
+        // Modern browsers only — deprioritises the bulk of the sequence
+        // behind the poster frame and the page's own critical resources.
+        // Unsupported browsers just ignore the property.
+        img.fetchPriority = i === 0 ? "high" : "low";
         images[i] = img;
         img.onload  = function () { settle(i, true); };
         img.onerror = function () { settle(i, false); };
         img.src = CONFIG.framePath(i);
       }
 
-      var concurrency = CONFIG.loaderConcurrency || 10;
-      for (var k = 0; k < concurrency; k++) pump();
+      var concurrency = CONFIG.loaderConcurrency || 14;
+      for (var k = 0; k < concurrency && k < order.length; k++) pump();
     }
 
     /* ---------- Scroll wiring ---------- */

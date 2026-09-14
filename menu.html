@@ -8,7 +8,10 @@
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;500;700&display=swap" rel="stylesheet">
+<!-- Non-blocking font load — see README "Frame loading performance". -->
+<link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;500;700&display=swap">
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;500;700&display=swap" rel="stylesheet" media="print" onload="this.media='all'">
+<noscript><link href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;500;700&display=swap" rel="stylesheet"></noscript>
 <link rel="stylesheet" href="assets/css/style.css">
 </head>
 <body>
@@ -24,7 +27,7 @@
 
 <section class="menu-hero">
   <h1>The full menu.</h1>
-  <p>Six pies, baked fresh, plus one mini dessert pie still in the test kitchen. Tap any pie to
+  <p>Five pies, baked fresh, plus one mini dessert pie still in the test kitchen. Tap any pie to
   scroll through its anatomy — lid, filling, base — plus ingredients and nutrition information.</p>
 </section>
 
@@ -39,19 +42,6 @@
     <div class="meta"><span class="price">$6.90</span><span class="explore">See the anatomy &rarr;</span></div>
   </a>
 
-  <a class="pie-card" href="pies/mince-and-cheese.html" style="--card-bg:#ece0c8; --card-accent:#a86c26;">
-    <div class="thumb">
-      <svg viewBox="0 0 120 120" role="img" aria-label="Mince and cheese pie icon">
-        <circle cx="60" cy="60" r="52" fill="#e8b923"/>
-        <circle cx="60" cy="60" r="38" fill="#7a3b28"/>
-        <circle cx="60" cy="60" r="52" fill="none" stroke="#a86c26" stroke-width="3" stroke-dasharray="2 7"/>
-      </svg>
-    </div>
-    <h3>Mince &amp; Cheese</h3>
-    <p class="desc">Slow-cooked beef mince in a rich gravy, capped with melted cheese in a shortcrust base.</p>
-    <div class="meta"><span class="price">$6.50</span><span class="explore">See the anatomy &rarr;</span></div>
-  </a>
-
   <a class="pie-card" href="pies/mince-and-triple-cheese.html" style="--card-bg:#ecd9c0; --card-accent:#c0651f;">
     <div class="thumb">
       <svg viewBox="0 0 120 120" role="img" aria-label="Mince and triple cheese pie icon">
@@ -63,6 +53,13 @@
     </div>
     <h3>Mince &amp; Triple Cheese</h3>
     <p class="desc">Beef mince in a thick gravy, under a browned cap of cheddar, mozzarella &amp; parmesan.</p>
+    <div class="insight">
+      <svg viewBox="0 0 120 120" role="img" aria-label="Our classic single-cheese mince pie, for comparison">
+        <circle cx="60" cy="60" r="52" fill="#e8b923"/>
+        <circle cx="60" cy="60" r="38" fill="#7a3b28"/>
+      </svg>
+      <span>Built on our classic single-cheese mince pie, pictured — no longer sold on its own.</span>
+    </div>
     <div class="meta"><span class="price">$7.90</span><span class="explore">See the anatomy &rarr;</span></div>
   </a>
 
@@ -137,7 +134,6 @@
       <h3>Menu</h3>
       <div class="footer-links">
         <a href="pies/chicken.html">Chicken</a>
-        <a href="pies/mince-and-cheese.html">Mince &amp; Cheese</a>
         <a href="pies/mince-and-triple-cheese.html">Mince &amp; Triple Cheese</a>
         <a href="pies/steak-and-cheese.html">Steak &amp; Cheese</a>
         <a href="pies/vege.html">Vege</a>

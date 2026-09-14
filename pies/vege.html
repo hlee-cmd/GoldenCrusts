@@ -8,7 +8,10 @@
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;500;700&display=swap" rel="stylesheet">
+<!-- Non-blocking font load — see README "Frame loading performance". -->
+<link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;500;700&display=swap">
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;500;700&display=swap" rel="stylesheet" media="print" onload="this.media='all'">
+<noscript><link href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;500;700&display=swap" rel="stylesheet"></noscript>
 <link rel="stylesheet" href="../assets/css/style.css">
 </head>
 <body style="--accent:#4c7a30; --accent-dark:#375a22; --stage-bg:#eef0da;">
@@ -122,11 +125,6 @@
       <h3>Chicken</h3>
       <p class="desc">Chunky chicken, mushroom &amp; mixed veg.</p>
     </a>
-    <a class="pie-card" href="mince-and-cheese.html" style="--card-bg:#ece0c8; --card-accent:#a86c26;">
-      <div class="thumb"><svg viewBox="0 0 120 120"><circle cx="60" cy="60" r="52" fill="#e8b923"/><circle cx="60" cy="60" r="38" fill="#7a3b28"/></svg></div>
-      <h3>Mince &amp; Cheese</h3>
-      <p class="desc">The everyday classic.</p>
-    </a>
     <a class="pie-card" href="steak-and-cheese.html" style="--card-bg:#e8d9c8; --card-accent:#7a2f1f;">
       <div class="thumb"><svg viewBox="0 0 120 120"><circle cx="60" cy="60" r="52" fill="#e8b923"/><circle cx="60" cy="60" r="38" fill="#6b2b1f"/></svg></div>
       <h3>Steak &amp; Cheese</h3>
@@ -161,7 +159,6 @@
       <h3>Menu</h3>
       <div class="footer-links">
         <a href="chicken.html">Chicken</a>
-        <a href="mince-and-cheese.html">Mince &amp; Cheese</a>
         <a href="mince-and-triple-cheese.html">Mince &amp; Triple Cheese</a>
         <a href="steak-and-cheese.html">Steak &amp; Cheese</a>
         <a href="vege.html">Vege</a>
@@ -181,10 +178,10 @@
   for a portfolio/learning project, not a real product for sale.</p>
 </footer>
 
-<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
-<script src="../assets/js/anatomy.js"></script>
-<script>
+<script defer src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+<script defer src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+<script defer src="../assets/js/anatomy.js"></script>
+<script type="module">
   window.initPieAnatomy({
     layers: [
       { selector: ".lid",    kind: "lift",  from: 0.12, to: 0.26 },
